@@ -1,0 +1,52 @@
+quando le credenziali non sono valide puoi farmi il layout come nella foto allegata? per verificare le crendeziali uso authcontroller con questo codice <?php
+require_once '../src/helpers/ResponseHelper.php';
+require_once '../src/models/UserModel.php';
+
+class AuthController {
+    public function handleLoginRequest() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
+
+            if (!empty($username) && !empty($password)) {
+                $userModel = new UserModel();
+                $token = $userModel->authenticate($username, $password);
+                if ($token) {
+                    $_SESSION['jwt_token'] = $token;
+                    header('Location: dashboard.php');
+                    exit;
+                } else {
+                    ResponseHelper::error('Credenziali non valide. Riprova.');
+                }
+            } else {
+                ResponseHelper::error('Inserisci username e password.');
+            }
+        }
+
+        require_once '../src/views/login.php';
+    }
+
+    public function handleRegisterRequest() {
+        // Logica per la registrazione (da implementare)
+        require_once '../src/views/register.php';
+    }
+}
+
+--
+Sto facendo un sito php per il un servizio di menu digitale. ho già fatto la parte del login, adesso bisogna fare la parte del gestionale (dashboard.php). 
+
+Il ristoratore dalla dashbaord deve poter fare tutto!  Creami anche il Db (query da mettere nel DB. Il db sta su src/config/db.php)
+
+(Funzioni core sapere che tipo di subscription ha l account [gia implempentato subscriptioncontroller.php])
+
+- Avere la preview del suo Menù
+- Gestire il Suo account
+- Contattare il supporto
+- nella prima schermata una pagina con utilità (scarica il qr code, supporti qr codes, supporti per nfc, prova il qr code, link)
+- Impostazioni generali (Stato menu (visibile o nascosto), Titolo Menu, Logo, Valuta, Link personalizzato (premium))
+- Impostazioni Contatti ( Numero di telefono, Numero Whatsapp), Contatti aggiuntivi Instagram, Facebook, Tiktok, YouTube, Twitter, Sito Web <- tutto solo per premium
+- Impostazioni Design Menu standard -  Categoria: Categoria Estesa, Categoria Compatta | Voce: Voce Estesa, Voce Compatta <- solo premium
+- Impostazioni Aggiungi un Menu PDF
+- Gestione Menu Categorie: Crea categorie pulsante aggiungi categoria, elimina e modifica
+(Creazione/ Modifica Categoria): Titolo (opzione per tradurre in altre lingue), Descrizione(opzione per tradurre in altre lingue), Immagine
+- Gestione Menu Voci Menu: Scegliere la categoria e aggiungere voce menu: Titolo ((opzione per tradurre in altre lingue)), Descrizione (opzione per tradurre in altre lingue), Immagine, Prezzo
