@@ -8,7 +8,7 @@
         <meta name="keywords" content="menunow,menunowdashboard">
         <meta name="author" content="Mast3r">
 
-        <title>MenuNow - <?= $t['page_title_languages'] ?></title>
+        <title>MenuNow - <?= $t['page_title_menumanage'] ?></title>
 
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -107,7 +107,7 @@
                         <a href="./dashboard.php"><i data-feather="home"></i><?= $t['dashboard'] ?></a>
                     </li>
                     <li>
-                        <a href="./languages.php" style="color: #118ab2 !important;"><i style="color: #118ab2 !important;" data-feather="globe"></i><?= $t['language'] ?></a>
+                        <a href="./languages.php"><i data-feather="globe"></i><?= $t['language'] ?></a>
                     </li>
                     <li>
                         <a href="./menu.php"><i data-feather="menu"></i><?= $t['menu'] ?></a>
@@ -116,7 +116,7 @@
                         <a href="./"><i data-feather="coffee"></i><?= $t['inventory'] ?></a>
                     </li>
                     <li>
-                        <a href="./qr-code.php" ><i data-feather="code"></i><?= $t['qr_code'] ?></a>
+                        <a href="./qr-code.php" style="color: #118ab2 !important;"><i style="color: #118ab2 !important;" data-feather="code"></i><?= $t['qr_code'] ?></a>
                     </li>
                     <li>
                         <a href="./settings.php"><i data-feather="tool"></i><?= $t['main_settings'] ?></a>
@@ -151,128 +151,29 @@
                 </ul>
             </div>
             <div class="page-content">
-            <div class="main-wrapper">
+                <div class="main-wrapper">
                     <div class="qr-section">
                         <div class="qr-header">
                                   <div class="language-icon">
-                                      <i class="fas fa-globe"></i>
+                                      <i class="fas fa-qrcode"></i>
                                   </div>
                                   <div>
-                                      <h1 class="language-title"><?= $t['language'] ?></h1>
+                                      <h1 class="language-title"><?= $t['menu_manage_header'] ?></h1>
                                   </div>
                               </div>
                         
                         <p class="qr-description">
-                            <?= $t['available_languages_subtitle'] ?>
+                            <?= $t['menu_manage_txt'] ?>
                         </p>
-                                                            <div class="card-tools">
-                                        <button type="button" class="btn btn-primary" onclick="openAddLanguageModal()">
-                                            <i class="fas fa-plus"></i> <?= $t['add_language'] ?>
-                                        </button>
-                                    </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="available-languages">
-                                        
-                                        <div id="languagesList">
-                                        <?php
-                                        // Helper functions for language display
-                                        function getCountryCode($lang) {
-                                            $map = [
-                                                'en' => 'gb',
-                                                'it' => 'it',
-                                                'de' => 'de',
-                                                'fr' => 'fr',
-                                                'es' => 'es',
-                                                'pt' => 'pt',
-                                                'tr' => 'tr',
-                                                'ru' => 'ru',
-                                                'ar' => 'sa',
-                                                'zh' => 'cn',
-                                                'hi' => 'in'
-                                            ];
-                                            return $map[$lang] ?? 'gb';
-                                        }
-                                        function getLanguageName($lang) {
-                                            $names = [
-                                                'en' => 'English (English)',
-                                                'it' => 'Italiano (Italian)',
-                                                'de' => 'Deutsch (German)',
-                                                'fr' => 'Français (French)',
-                                                'es' => 'Español (Spanish)',
-                                                'pt' => 'Português (Portuguese)',
-                                                'tr' => 'Türkçe (Turkish)',
-                                                'ru' => 'Русский (Russian)',
-                                                'ar' => 'العربية (Arabic)',
-                                                'zh' => '中文 (Chinese)',
-                                                'hi' => 'हिन्दी (Hindi)'
-                                            ];
-                                            return $names[$lang] ?? $lang;
-                                        }
-                                        ?>
-                                        <?php foreach ($languages as $lang): ?>
-    <div class="language-item" data-lang="<?= htmlspecialchars($lang['language_code']) ?>">
-        <img src="https://flagcdn.com/w40/<?= getCountryCode($lang['language_code']) ?>.png" alt="<?= getLanguageName($lang['language_code']) ?>" class="flag-img">
-        <span class="language-name"><?= getLanguageName($lang['language_code']) ?></span>
-        <?php if (!empty($lang['is_primary'])): ?>
-            <span class="primary-badge"><?= $t['primary'] ?></span>
-        <?php else: ?>
-            <button class="make-primary-btn" onclick="setPrimaryLanguage('<?= $lang['language_code'] ?>')"><?= $t['make_primary'] ?></button>
-            <button class="delete-btn" onclick="deleteLanguage('<?= $lang['language_code'] ?>')">
-                <i class="fas fa-trash"></i>
-            </button>
-        <?php endif; ?>
-    </div>
-<?php endforeach; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
+
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Add Language Modal -->
-        <style>
-        /* Modal centering and border for visibility */
-        .modal-dialog-centered .modal-content {
-            border: 2px solid #118ab2;
-            box-shadow: 0 0 24px 0 rgba(0,0,0,0.12);
-            border-radius: 16px;
-        }
-        </style>
-        <div class="modal fade" id="addLanguageModal" tabindex="-1" aria-labelledby="addLanguageModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="addLanguageModalLabel"><?= $t['add_language'] ?></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="mb-3">
-                  <label for="languageSelect" class="form-label"><?= $t['select_language'] ?></label>
-                  <select class="form-select" id="languageSelect">
-                    <option value=""><?= $t['choose_language'] ?></option>
-                    <?php foreach ($availableLanguages as $lang): ?>
-                      <option value="<?= $lang['code'] ?>"><?= getLanguageName($lang['code']) ?></option>
-                    <?php endforeach; ?>
-                  </select>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $t['close'] ?></button>
-                <button type="button" class="btn btn-primary" onclick="addLanguage()"><?= $t['add'] ?></button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ...modal and scripts... -->
+        
+        
+        
         <script src="../public/assets/plugins/jquery/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/@popperjs/core@2"></script>
         <script src="../public/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -281,59 +182,10 @@
         <script src="../public/assets/js/main.min.js"></script>
         <script src="../public/assets/js/script.js"></script>
         
-        <script>
-            function openAddLanguageModal() {
-                const modal = new bootstrap.Modal(document.getElementById('addLanguageModal'));
-                modal.show();
-            }
-            
-            function addLanguage() {
-                const select = document.getElementById('languageSelect');
-                const selectedValue = select.value;
-                
-                if (!selectedValue) {
-                    alert('<?= $t['please_select_language_alert'] ?>');
-                    return;
-                }
-
-                $.post('../src/ajax/manage_languages.php', {
-                    action: 'add',
-                    language_code: selectedValue
-                }).done(function(response) {
-                    const data = JSON.parse(response);
-                    if (data.error) {
-                        alert(data.error);
-                    } else {
-                        location.reload();
-                    }
-                });
-            }
-
-            function deleteLanguage(langCode) {
-                if (!confirm('<?= $t['confirm_delete_language'] ?? "Sei sicuro di voler eliminare questa lingua?" ?>')) return;
-
-                $.post('../src/ajax/manage_languages.php', {
-                    action: 'delete',
-                    language_code: langCode
-                }).done(function(response) {
-                    const data = JSON.parse(response);
-                    if (data.success) {
-                        location.reload();
-                    }
-                });
-            }
-
-            function setPrimaryLanguage(langCode) {
-                $.post('../src/ajax/manage_languages.php', {
-                    action: 'set_primary',
-                    language_code: langCode
-                }).done(function(response) {
-                    const data = JSON.parse(response);
-                    if (data.success) {
-                        location.reload();
-                    }
-                });
-            }
-        </script>
+<script>
+    // Initialize Feather Icons
+    feather.replace();
+   
+</script>
     </body>
 </html>

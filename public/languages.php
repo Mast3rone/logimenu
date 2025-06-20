@@ -33,5 +33,24 @@ if (!$locale) {
 $localeName = $locale['name'];
 $linkslug = $locale['link_slug'];
 
+// Fetch restaurant languages
+$stmt = $pdo->prepare("SELECT language_code, is_primary FROM restaurant_languages WHERE restaurant_id = ? AND is_active = 1");
+$stmt->execute([$locale_token]);
+$languages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// 10 most popular languages for selection
+$availableLanguages = [
+    ['code' => 'en'],
+    ['code' => 'es'],
+    ['code' => 'zh'],
+    ['code' => 'hi'],
+    ['code' => 'ar'],
+    ['code' => 'fr'],
+    ['code' => 'ru'],
+    ['code' => 'pt'],
+    ['code' => 'de'],
+    ['code' => 'it'],
+];
+
 require_once '../src/views/languages.php';
 

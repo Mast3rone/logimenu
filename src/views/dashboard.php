@@ -114,7 +114,7 @@
                     <a href="./languages.php"><i data-feather="globe"></i><?= $t['language'] ?></a>
                   </li>       
                    <li>
-                    <a href="./"><i data-feather="menu"></i><?= $t['menu'] ?></a>
+                    <a href="./menu.php"><i data-feather="menu"></i><?= $t['menu'] ?></a>
                   </li>
                    <li>
                     <a href="./"><i data-feather="coffee"></i><?= $t['inventory'] ?></a>

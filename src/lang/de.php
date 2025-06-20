@@ -94,6 +94,13 @@ return [
     'modal_add_button' => 'Hinzufügen',
     'language_added_alert' => 'Sprache hinzugefügt',
     'please_select_language_alert' => 'Bitte wählen Sie eine Sprache aus.',
+    'add_language' => 'Sprache hinzufügen',
+    'available_languages' => 'Verfügbare Sprachen',
+    'select_language' => 'Sprache auswählen',
+    'choose_language' => 'Wähle eine Sprache',
+    'close' => 'Schließen',
+    'add' => 'Hinzufügen',
+    'confirm_delete_language' => 'Möchten Sie diese Sprache wirklich löschen?',
 
     //QR Code
     'page_title_qrcode' => 'QR-Code',  
@@ -163,4 +170,12 @@ return [
     'menu_active_heading' => 'Menü aktiv',
     'menu_active_description' => 'Aktivieren oder deaktivieren Sie die Sichtbarkeit Ihres Online-Menüs',
     'save_settings_button' => 'Einstellungen speichern',
+    'method_not_allowed' => 'Methode nicht zulässig.',
+    'invalid_session' => 'Ungültige Sitzung.',
+    'invalid_json_data' => 'Ungültige JSON-Daten.',
+    'settings_saved_success' => 'Einstellungen erfolgreich gespeichert.',
+    'settings_saved_error' => 'Fehler beim Speichern der Einstellungen.',
+    'enable_second_shift' => 'Zweite Schicht aktivieren',
+    'second_opening_time' => 'Zweite Öffnung',
+    'second_closing_time' => 'Zweite Schließung',
 ];

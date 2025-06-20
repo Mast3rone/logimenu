@@ -94,6 +94,13 @@ return [
     'modal_add_button' => 'Add',
     'language_added_alert' => 'Language added',
     'please_select_language_alert' => 'Please select a language.',
+    'add_language' => 'Add Language',
+    'available_languages' => 'Available Languages',
+    'select_language' => 'Select Language',
+    'choose_language' => 'Choose a language',
+    'close' => 'Close',
+    'add' => 'Add',
+    'confirm_delete_language' => 'Are you sure you want to delete this language?',
 
     //QR Code
     'page_title_qrcode' => 'QR Code',  
@@ -163,4 +170,41 @@ return [
     'menu_active_heading' => 'Menu Active',
     'menu_active_description' => 'Activate or deactivate the visibility of your online menu',
     'save_settings_button' => 'Save Settings',
+    'method_not_allowed' => 'Method not allowed.',
+    'invalid_session' => 'Invalid session.',
+    'invalid_json_data' => 'Invalid JSON data.',
+    'settings_saved_success' => 'Settings saved successfully.',
+    'settings_saved_error' => 'Error while saving settings.',
+    'enable_second_shift' => 'Enable Second Shift',
+    'second_opening_time' => 'Second Opening',
+    'second_closing_time' => 'Second Closing',
+
+    // --- Menu Manage ---
+    'manage_menu' => 'Manage Menu',
+    'categories_for' => 'Categories for:',
+    'add_category' => 'Add category',
+    'category_name' => 'Category name',
+    'add' => 'Add',
+    'cancel' => 'Cancel',
+    'no_categories' => 'No categories yet. Create the first category!',
+    'create_first_category' => 'Create your first category',
+    'organize_menu_categories' => 'Organize your menu into categories like "Starters", "Pizzas", etc.',
+    'visible' => 'Visible',
+    'hidden' => 'Hidden',
+    'show' => 'Show',
+    'hide' => 'Hide',
+    'delete' => 'Delete',
+    'delete_category_confirm' => 'Delete this category?',
+
+    // New translations for menu_manage.php
+    'page_title_menumanage' => 'Menu Management',
+    'page_subtitle_menumanage' => 'Manage your menus, categories and items',
+    'btn_save_changes' => 'Save changes',
+    'btn_add_menu' => 'Add Menu',
+    'your_menus' => 'Your menus',
+    'no_menus_yet' => 'You have not created any menus yet.',
+    'banner_management' => 'Banner Management',
+
+    'articles' => 'items',
+
 ];

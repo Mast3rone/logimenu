@@ -94,6 +94,13 @@ return [
     'modal_add_button' => 'Aggiungi',
     'language_added_alert' => 'Lingua aggiunta',
     'please_select_language_alert' => 'Per favore, seleziona una lingua.',
+    'add_language' => 'Aggiungi Lingua',
+    'available_languages' => 'Lingue Disponibili',
+    'select_language' => 'Seleziona Lingua',
+    'choose_language' => 'Scegli una lingua',
+    'close' => 'Chiudi',
+    'add' => 'Aggiungi',
+    'confirm_delete_language' => 'Sei sicuro di voler eliminare questa lingua?',
 
     //QR Code
     'page_title_qrcode' => 'QR Code',
@@ -163,5 +170,38 @@ return [
     'menu_active_heading' => 'Menu Attivo',
     'menu_active_description' => 'Attiva o disattiva la visibilità del tuo menu online',
     'save_settings_button' => 'Salva Impostazioni',
-    
+    'method_not_allowed' => 'Metodo non consentito.',
+    'invalid_session' => 'Sessione non valida.',
+    'invalid_json_data' => 'Dati JSON non validi.',
+    'settings_saved_success' => 'Impostazioni salvate con successo.',
+    'settings_saved_error' => 'Errore durante il salvataggio delle impostazioni.',
+    'enable_second_shift' => 'Abilita Seconda Fascia Oraria',
+    'second_opening_time' => 'Seconda Apertura',
+    'second_closing_time' => 'Seconda Chiusura',
+
+    // --- Menu Manage ---
+    'manage_menu' => 'Gestisci Menu',
+    'categories_for' => 'Categorie per:',
+    'add_category' => 'Aggiungi categoria',
+    'category_name' => 'Nome categoria',
+    'add' => 'Aggiungi',
+    'cancel' => 'Annulla',
+    'no_categories' => 'Nessuna categoria presente. Crea la prima categoria!',
+    'create_first_category' => 'Crea la tua prima categoria',
+    'organize_menu_categories' => 'Organizza il menu in categorie come "Antipasti", "Pizze", ecc.',
+    'visible' => 'Visibile',
+    'hidden' => 'Nascosta',
+    'show' => 'Mostra',
+    'hide' => 'Nascondi',
+    'delete' => 'Elimina',
+    'delete_category_confirm' => 'Eliminare questa categoria?',
+
+    // Menu Management Translations
+    'page_title_menumanage' => 'Gestione Menu',
+    'page_subtitle_menumanage' => 'Gestisci i tuoi menu, categorie e articoli',
+    'btn_save_changes' => 'Salva modifiche',
+    'btn_add_menu' => 'Aggiungi Menu',
+    'your_menus' => 'I tuoi menu',
+    'no_menus_yet' => 'Non hai ancora creato nessun menu.',
+    'banner_management' => 'Gestione Banner',
 ];
